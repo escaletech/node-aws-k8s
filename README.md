@@ -6,7 +6,7 @@ This image packs what is necessary for deploying services to `aws`. It provides 
 
 * `ecr-authenticate.sh`: Authenticates in AWS's docker registry, `ECR`. Requires `$AWS_REGION` and `aws-authenticate.sh`
 
-* `ecr-create-build-push.sh`: Creates an `ECR` repo if doesn't exists, builds and push an image to said repo. Requires `ecr-authenticate.sh`. Usage: `./scripts/ecr-create-build-push.sh <repo> <tag>`
+* `ecr-create-build-push.sh`: Creates an `ECR` repo if doesn't exists, builds and push an image to said repo. Requires `$AWS_ECR_ACCOUNT_URL`, `$AWS_REGION` and `ecr-authenticate.sh`. Usage: `./scripts/ecr-create-build-push.sh <repo> <tag>`
 
 * `eks-authenticate.sh`: Connects a local installation of `Kubernetes` to AWS's K8s engine, `EKS`. Requires `$AWS_REGION`, `$CLUSTER_NAME` and `aws-authenticate.sh`
 
