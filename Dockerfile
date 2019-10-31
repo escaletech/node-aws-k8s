@@ -1,14 +1,4 @@
-FROM cimg/base:stable
-
-# Installs envsubst
-RUN \
-  apt-get update \
-  && apt-get -y install gettext-base
-
-# Installs aws-cli
-RUN \
-  apt-get install -y python-pip python-dev && \
-  pip install --upgrade awscli
+FROM escaletech/aws-k8s
 
 # Installs node
 ENV NODE_VERSION 10.13.0
@@ -24,10 +14,3 @@ RUN curl -L -o yarn.tar.gz "https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v
 	rm yarn.tar.gz && \
 	ln -s /opt/yarn-v${YARN_VERSION}/bin/yarn /usr/local/bin/yarn && \
 	ln -s /opt/yarn-v${YARN_VERSION}/bin/yarnpkg /usr/local/bin/yarnpkg
-
-# Installs kubernetes
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
-	chmod +x ./kubectl && \
-	mv ./kubectl /usr/local/bin
-
-COPY ./scripts /scripts

@@ -1,6 +1,6 @@
-# Continuous Deployment in AWS and K8s
+# Continuous Deployment in AWS and K8s with node
 
-This image packs what is necessary for deploying services to `aws`. It provides the following scripts:
+This image packs what is necessary for deploying services to `aws` and `kubernetes` with `node.js`. It provides the following scripts:
 
 * `aws-authenticate.sh`: Authenticates in AWS. Requires `$AWS_ACCESS_KEY_ID`, `$AWS_SECRET_ACCESS_KEY` and `$AWS_REGION`
 
