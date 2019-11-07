@@ -1,7 +1,7 @@
 FROM escaletech/aws-k8s
 
 # Installs node
-ENV NODE_VERSION 10.13.0
+ENV NODE_VERSION 10.17.0
 RUN curl -L -o node.tar.xz "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" && \
 	tar -xJf node.tar.xz -C /usr/local --strip-components=1 && \
 	rm node.tar.xz && \
